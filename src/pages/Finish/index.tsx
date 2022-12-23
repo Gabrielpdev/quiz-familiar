@@ -10,6 +10,8 @@ export const Finish: React.FC = () => {
   function handleNextQuestion() {
     useGameSetupStore.setState((state) => ({
       ...state,
+      skippedQuestions: 0,
+      universitarySelected: false,
       isOnMenu: true,
       answears: [],
       currentQeustion: 0

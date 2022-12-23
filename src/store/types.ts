@@ -8,8 +8,13 @@ export type GET_GAME_SETUP_STATE = GET<IGameSetupStore>
 
 export interface IGameSetupStore {
   isOnMenu: boolean
+  isOnUnivesitry: boolean
+  universitarySelected: boolean
+  skippedQuestions: number
   currentQeustion: number
   answears: number[]
+  universitaries: string[]
 
+  getUniversitaries: () => void
   pushToAnswears: (value: number) => void
 }

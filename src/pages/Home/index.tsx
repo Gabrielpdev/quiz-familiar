@@ -4,14 +4,37 @@ import React, { useState } from 'react'
 import { BsCheckCircleFill } from 'react-icons/bs'
 import { Finish } from '../Finish'
 import { Menu } from '../Menu'
+import { Universitaries } from '../Universitaries'
 import * as S from './styles'
 
 export const Home: React.FC = () => {
+  const isOnUnivesitry = useGameSetupStore((state) => state.isOnUnivesitry)
   const isOnMenu = useGameSetupStore((state) => state.isOnMenu)
+  const skippedQuestions = useGameSetupStore((state) => state.skippedQuestions)
   const currentQeustion = useGameSetupStore((state) => state.currentQeustion)
+  const universitarySelected = useGameSetupStore((state) => state.universitarySelected)
   const pushToAnswears = useGameSetupStore((state) => state.pushToAnswears)
 
   const [selectedAnswaer, setSelectedAnswaer] = useState<null | number>(null)
+
+  function handleHelpQuestion() {
+    useGameSetupStore.setState((state) => ({
+      ...state,
+      isOnUnivesitry: true
+    }))
+  }
+
+  function handleSkipQuestion() {
+    pushToAnswears(questions[currentQeustion].correct)
+
+    useGameSetupStore.setState((state) => ({
+      ...state,
+      skippedQuestions: skippedQuestions + 1,
+      currentQeustion: currentQeustion + 1
+    }))
+
+    setSelectedAnswaer(null)
+  }
 
   function handleNextQuestion() {
     if (selectedAnswaer === null) return
@@ -23,6 +46,14 @@ export const Home: React.FC = () => {
     }))
 
     setSelectedAnswaer(null)
+  }
+
+  if (isOnMenu) {
+    return <Menu />
+  }
+
+  if (isOnUnivesitry) {
+    return <Universitaries />
   }
 
   if (isOnMenu) {
@@ -41,6 +72,18 @@ export const Home: React.FC = () => {
           {currentQeustion + 1}/{questions.length}
         </S.CurrentQuestion>
       </S.Header>
+
+      <S.Options>
+        <S.ButtonHelp onClick={handleHelpQuestion} disabled={universitarySelected}>
+          UNIVERSITARIOS <br />
+          {universitarySelected ? 1 : 0}/ 1
+        </S.ButtonHelp>
+
+        <S.ButtonHelp onClick={handleSkipQuestion} disabled={skippedQuestions >= 1}>
+          PULAR <br />
+          {skippedQuestions}/ 1
+        </S.ButtonHelp>
+      </S.Options>
 
       <S.Question>{questions[currentQeustion].question}</S.Question>
 

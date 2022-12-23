@@ -1,6 +1,6 @@
 export const questions = [
   {
-    question: 'Qual idade da Iranir ?',
+    question: 'Qual idade da Irani ?',
     alternatives: ['84', '85', '82', '81', '83'],
     correct: 4
   },
@@ -20,12 +20,12 @@ export const questions = [
     correct: 1
   },
   {
-    question: 'Que ano nasceu a/o primogênito(a) da Iranir ?',
+    question: 'Que ano nasceu a/o primogênito(a) da Irani ?',
     alternatives: ['1963', '1965', '1964', '1967', '1966'],
     correct: 2
   },
   {
-    question: 'Qual nome dos pais da Iranir e Irene ?',
+    question: 'Qual nome dos pais da Irani e Irene ?',
     alternatives: [
       'Maria e Miguel',
       'Maria e Pedro',
@@ -37,11 +37,11 @@ export const questions = [
   },
   {
     question: 'Quem é o atual dono(a) dessa casa',
-    alternatives: ['Aerton', 'Vinicyus', 'Iranir', 'Irene', 'Waldir'],
+    alternatives: ['Aerton', 'Vinicyus', 'Irani', 'Irene', 'Waldir'],
     correct: 0
   },
   {
-    question: 'Qual a ordem crescente a idade os filhos da Iranir ? ',
+    question: 'Qual a ordem crescente a idade os filhos da Irani ? ',
     alternatives: [
       'Adriana,Waldir,Lizia,Vinicyus',
       'Waldir,Adriana,Lizia,Vinicyus',
@@ -50,5 +50,10 @@ export const questions = [
       'Vinicyus,Waldir,Adriana,Lizia'
     ],
     correct: 4
+  },
+  {
+    question: 'Qual das frutas o quintal nunca produziu ? ',
+    alternatives: ['Uva', 'Laranja', 'Limão', 'Amora', 'Goiaba'],
+    correct: 1
   }
 ]
