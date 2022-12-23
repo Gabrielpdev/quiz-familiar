@@ -9,5 +9,6 @@ export const univesitaries = [
   'Sandrinho',
   'Nino',
   'Lizia',
-  'Lucas'
+  'Lucas',
+  'Waldir'
 ]

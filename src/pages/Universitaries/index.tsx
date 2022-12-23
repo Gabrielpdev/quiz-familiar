@@ -23,8 +23,6 @@ export const Universitaries: React.FC = () => {
     getUniversitaries()
   }, [])
 
-  console.log(universitaries)
-
   return (
     <S.Wrapper>
       <S.Header>

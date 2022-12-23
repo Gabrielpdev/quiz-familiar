@@ -55,5 +55,10 @@ export const questions = [
     question: 'Qual das frutas o quintal nunca produziu ? ',
     alternatives: ['Uva', 'Laranja', 'Limão', 'Amora', 'Goiaba'],
     correct: 1
+  },
+  {
+    question: 'Qual ano a Irani se aposentou ? ',
+    alternatives: ['1991', '1993', '1989', '1992', '1990'],
+    correct: 0
   }
 ]
