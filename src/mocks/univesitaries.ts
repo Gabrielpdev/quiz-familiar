@@ -10,5 +10,6 @@ export const univesitaries = [
   'Nino',
   'Lizia',
   'Lucas',
+  'Guilherme',
   'Waldir'
 ]
