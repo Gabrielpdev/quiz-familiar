@@ -2,10 +2,10 @@ import { questions } from '@/mocks/questions'
 import { useGameSetupStore } from '@/store'
 import React, { useState } from 'react'
 import { BsCheckCircleFill } from 'react-icons/bs'
-import { Finish } from '../Finish'
 import { Menu } from '../Menu'
 import { Universitaries } from '../Universitaries'
 import * as S from './styles'
+import { Finish } from '../Finish'
 
 export const Home: React.FC = () => {
   const isOnUnivesitry = useGameSetupStore((state) => state.isOnUnivesitry)

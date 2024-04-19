@@ -3,19 +3,15 @@ import { useGameSetupStore } from '@/store'
 import React from 'react'
 import { BsCheckCircleFill } from 'react-icons/bs'
 import * as S from './styles'
+import { Result } from '../Result'
 
 export const Finish: React.FC = () => {
   const answears = useGameSetupStore((state) => state.answears)
 
+  const [isOnResult, setIsOnResult] = React.useState(false)
+
   function handleNextQuestion() {
-    useGameSetupStore.setState((state) => ({
-      ...state,
-      skippedQuestions: 0,
-      universitarySelected: false,
-      isOnMenu: true,
-      answears: [],
-      currentQeustion: 0
-    }))
+    setIsOnResult(true)
   }
 
   const corrects = questions.reduce((acc, question, index) => {
@@ -24,6 +20,10 @@ export const Finish: React.FC = () => {
     }
     return acc
   }, 0)
+
+  if (isOnResult) {
+    return <Result />
+  }
 
   return (
     <S.Wrapper>
